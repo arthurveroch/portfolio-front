@@ -1,0 +1,20 @@
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import Error from './pages/Error.jsx';
+import App from './App.jsx';
+import './assets/styles/index.css';
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <BrowserRouter>
+      <App />
+      <Routes>
+        <Route path='*' element={<Error />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/accueil' element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  </StrictMode>
+);
