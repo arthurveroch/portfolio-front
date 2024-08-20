@@ -7,9 +7,6 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ReactGA from 'react-ga';
 
-ReactGA.initialize('G-4D8BDQ0GDG');
-ReactGA.pageview(window.location.pathname + window.location.search);
-
 export default function Home() {
   return (
     <div>

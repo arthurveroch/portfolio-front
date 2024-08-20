@@ -1,8 +1,9 @@
 import Navbar from './components/Navbar';
+import { useLocation } from 'react-router-dom';
 import Menu from './components/Menu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DropdownMenu from './context/DropdownMenu';
-import Home from './pages/Home';
+import ReactGA from 'react-ga';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +15,14 @@ function App() {
     setIsOpen,
     handleOpen,
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    // Suivi de la page vue lors des changements de route
+    ReactGA.pageview(location.pathname + location.search);
+  }, [location]);
+
   return (
     <>
       <DropdownMenu.Provider value={DropdownMenuValue}>

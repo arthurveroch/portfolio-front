@@ -5,6 +5,9 @@ import Home from './pages/Home.jsx';
 import Error from './pages/Error.jsx';
 import App from './App.jsx';
 import './assets/styles/index.css';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('G-4D8BDQ0GDG');
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
