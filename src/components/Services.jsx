@@ -7,7 +7,9 @@ export default function Services() {
   const [services, setServices] = useState([]);
   const response = async (e) => {
     await axios
-      .get('http://localhost:1337/api/services?populate=*')
+      .get(
+        'https://strapi-server-portfolio.onrender.com/api/services?populate=*'
+      )
       .then((res) => setServices(res.data.data));
   };
 

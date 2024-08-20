@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 
 export default function ProjectCard({ project }) {
-  const baseUrl = 'http://localhost:1337';
+  const baseUrl = 'https://strapi-server-portfolio.onrender.com';
   return (
     <ProjectCardStyled>
       <div className='img-container'>

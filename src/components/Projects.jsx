@@ -8,7 +8,9 @@ export default function Projects() {
 
   const response = async (e) => {
     await axios
-      .get('http://localhost:1337/api/projects?populate=*')
+      .get(
+        'https://strapi-server-portfolio.onrender.com/api/projects?populate=*'
+      )
       .then((res) => setProjects(res.data.data));
   };
 

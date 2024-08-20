@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export default function SkillCard({ skill }) {
-  const baseUrl = 'http://localhost:1337';
+  const baseUrl = 'https://strapi-server-portfolio.onrender.com';
 
   return (
     <SkillCardStyled>

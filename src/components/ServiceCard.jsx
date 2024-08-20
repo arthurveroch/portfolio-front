@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 
 export default function ServiceCard({ service }) {
-  const baseUrl = 'http://localhost:1337';
+  const baseUrl = 'https://strapi-server-portfolio.onrender.com';
   return (
     <ServicesCardStyled>
       <div className='img-container'>

@@ -8,7 +8,7 @@ export default function Technos() {
 
   const response = async (e) => {
     await axios
-      .get('http://localhost:1337/api/skills?populate=*')
+      .get('https://strapi-server-portfolio.onrender.com/api/skills?populate=*')
       .then((res) => setSkills(res.data.data));
   };
 
