@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
 export default function SkillCard({ skill }) {
-  const baseUrl = 'https://strapi-server-portfolio.onrender.com';
-
   return (
     <SkillCardStyled>
       <div className='skill-img'>
-        <img src={baseUrl + skill.attributes.logo.data.attributes.url} />
+        <img src={skill.attributes.logo.data.attributes.url} />
       </div>
 
       <span>{skill.attributes.techno}</span>

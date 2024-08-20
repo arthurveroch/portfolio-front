@@ -2,13 +2,10 @@ import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 
 export default function ServiceCard({ service }) {
-  const baseUrl = 'https://strapi-server-portfolio.onrender.com';
   return (
     <ServicesCardStyled>
       <div className='img-container'>
-        <img
-          src={baseUrl + service.attributes.servicelogo.data.attributes.url}
-        />
+        <img src={service.attributes.servicelogo.data.attributes.url} />
       </div>
       <div className='title-container'>
         <h3>{service.attributes.title}</h3>

@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import { useEffect } from 'react';
 
 export default function ProjectCard({ project }) {
-  const baseUrl = 'https://strapi-server-portfolio.onrender.com';
   return (
     <ProjectCardStyled>
       <div className='img-container'>
-        <img src={baseUrl + project.attributes.thumbnail.data.attributes.url} />
+        <img src={project.attributes.thumbnail.data.attributes.url} />
       </div>
       <div className='infos'>
         <h3>{project.attributes.title}</h3>
