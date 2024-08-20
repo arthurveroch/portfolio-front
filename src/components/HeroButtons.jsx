@@ -3,8 +3,12 @@ import styled from 'styled-components';
 export default function HeroButtons() {
   return (
     <HeroButtonsStyled>
-      <button>Mes projets</button>
-      <button>Contactez moi</button>
+      <a href='#projets'>
+        <button>Mes projets</button>
+      </a>
+      <a href='#contact'>
+        <button>Contactez moi</button>
+      </a>
     </HeroButtonsStyled>
   );
 }
@@ -28,5 +32,10 @@ const HeroButtonsStyled = styled.div`
   button:hover {
     border: 1px solid #ff5a5a;
     background: #f0f0f0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
   }
 `;

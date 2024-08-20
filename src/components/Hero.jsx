@@ -4,7 +4,7 @@ import LogoHero from './LogoHero';
 
 export default function Hero() {
   return (
-    <HeroStyled>
+    <HeroStyled id='accueil'>
       <div className='container'>
         <Title />
         <LogoHero />

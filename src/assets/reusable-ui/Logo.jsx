@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Logo() {
   return (
     <LogoStyled>
-      <Link to='/'>Agence Mirage Média</Link>
+      <a href='#accueil'>Agence Mirage Média</a>
     </LogoStyled>
   );
 }

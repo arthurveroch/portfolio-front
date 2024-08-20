@@ -11,9 +11,12 @@ export default function Menu() {
   const { isOpen, setIsOpen, handleOpen } = useContext(DropdownMenu);
   return (
     <MenuStyled style={isOpen ? { transform: 'translateX(0)' } : {}}>
-      <MenuItem link={'/'} content={'Accueil'} />
-      <MenuItem link={'/blog'} content={'Mes projets'} />
-      <MenuItem link={'/contact'} content={'Contact'} />
+      <MenuItem link={'#accueil'} content={'Accueil'} />
+      <MenuItem link={'#about'} content={'A propos'} />
+      <MenuItem link={'#services'} content={'Services'} />
+      <MenuItem link={'#projets'} content={'Mes projets'} />
+      <MenuItem link={'#contact'} content={'Contact'} />
+
       <div className='contact'>
         <p>
           <a href='mailto:agencemiragemedia@gmail.com'>

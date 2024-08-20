@@ -7,9 +7,9 @@ export default function MenuItem({ content, link }) {
   const { isOpen, setIsOpen, handleOpen } = useContext(DropdownMenu);
   return (
     <MenuItemStyled>
-      <Link onClick={handleOpen} to={link}>
+      <a onClick={handleOpen} href={link}>
         {content && content}
-      </Link>
+      </a>
     </MenuItemStyled>
   );
 }
@@ -18,7 +18,7 @@ const MenuItemStyled = styled.li`
   color: #fff;
   font-family: 'Poppins', sans-serif;
   list-style: none;
-  font-size: 40px;
+  font-size: 20px;
   width: 50%;
   display: flex;
   cursor: pointer;

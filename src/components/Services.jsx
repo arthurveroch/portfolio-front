@@ -16,7 +16,7 @@ export default function Services() {
   }, []);
 
   return (
-    <ServicesStyled>
+    <ServicesStyled id='services'>
       <div className='container'>
         <h1>Services</h1>
         <div className='services-container'>

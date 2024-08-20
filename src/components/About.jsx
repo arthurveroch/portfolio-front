@@ -4,7 +4,7 @@ import Technos from './Technos';
 
 export default function About() {
   return (
-    <AboutStyled>
+    <AboutStyled id='about'>
       <div className='container'>
         <h1>À propos de l'agence</h1>
         <AboutPlus />
