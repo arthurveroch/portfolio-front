@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Menu from './components/Menu';
 import { useState } from 'react';
 import DropdownMenu from './context/DropdownMenu';
+import Home from './pages/Home';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
