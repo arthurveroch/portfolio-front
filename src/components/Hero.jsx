@@ -1,10 +1,18 @@
 import styled from 'styled-components';
 import Title from './Title';
 import LogoHero from './LogoHero';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 export default function Hero() {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(heroRef.current, { transform: 'translate(0)', duration: 2 });
+  }, []);
+
   return (
-    <HeroStyled id='accueil'>
+    <HeroStyled ref={heroRef} id='accueil'>
       <div className='container'>
         <Title />
         <LogoHero />
@@ -19,6 +27,7 @@ const HeroStyled = styled.div`
   justify-content: center;
   align-items: center;
   background: #f5f5f5;
+  transform: translateX(-200%);
 
   .container {
     width: 70%;

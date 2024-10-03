@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ServiceCard from './ServiceCard';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Services() {
   const [services, setServices] = useState([]);
+  const servicesRef = useRef(null);
   const response = async (e) => {
     await axios
       .get(
@@ -17,8 +21,24 @@ export default function Services() {
     response();
   }, []);
 
+  useEffect(() => {
+    if (services.length > 0) {
+      gsap.to(servicesRef.current, {
+        transform: 'translate(0)',
+        duration: 1,
+
+        scrollTrigger: {
+          trigger: servicesRef.current,
+          start: 'top 50%',
+          end: 'top 30%',
+          markers: true,
+        },
+      });
+    }
+  }, [response]);
+
   return (
-    <ServicesStyled id='services'>
+    <ServicesStyled ref={servicesRef} id='services'>
       <div className='container'>
         <h1>Services</h1>
         <div className='services-container'>
@@ -40,6 +60,7 @@ const ServicesStyled = styled.div`
   justify-content: center;
   align-items: center;
   font-family: 'Poppins', sans-serif;
+  transform: translateX(-200%);
 
   .container {
     width: 50%;

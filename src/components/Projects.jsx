@@ -1,10 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import ProjectCard from './ProjectCard';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
+  const projectsRef = useRef(null);
 
   const response = async (e) => {
     await axios
@@ -17,8 +21,24 @@ export default function Projects() {
   useEffect(() => {
     response();
   }, []);
+
+  useEffect(() => {
+    if (projects.length > 0) {
+      gsap.to(projectsRef.current, {
+        transform: 'translate(0)',
+        duration: 1,
+
+        scrollTrigger: {
+          trigger: projectsRef.current,
+          start: 'top 50%',
+          end: 'top 30%',
+          markers: true,
+        },
+      });
+    }
+  }, [response]);
   return (
-    <ProjectsStyled id='projets'>
+    <ProjectsStyled ref={projectsRef} id='projets'>
       <div className='container'>
         <h1>Mes projets</h1>
         <div className='projects-container'>
@@ -40,6 +60,7 @@ const ProjectsStyled = styled.div`
   justify-content: center;
   align-items: center;
   font-family: 'Poppins', sans-serif;
+  transform: translateX(200%);
 
   .container {
     width: 75%;

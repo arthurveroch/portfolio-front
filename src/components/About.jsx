@@ -1,10 +1,23 @@
 import styled from 'styled-components';
 import AboutPlus from './AboutPlus';
 import Technos from './Technos';
+import { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(aboutRef.current, {
+      transform: 'translate(0)',
+      duration: 1,
+    });
+  }, []);
+
   return (
-    <AboutStyled id='about'>
+    <AboutStyled ref={aboutRef} id='about'>
       <div className='container'>
         <h1>À propos de l'agence</h1>
         <AboutPlus />
@@ -20,6 +33,7 @@ const AboutStyled = styled.div`
   justify-content: center;
   align-items: center;
   font-family: 'Poppins', sans-serif;
+  transform: translateX(200%);
 
   .container {
     width: 75%;

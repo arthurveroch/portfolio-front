@@ -56,6 +56,7 @@ const MenuStyled = styled.div`
   gap: 15px;
   transform: translateX(100%);
   transition: transform 0.6s ease-in-out;
+  z-index: 100;
 
   .contact {
     font-family: 'Roboto', sans-serif;

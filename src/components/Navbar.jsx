@@ -1,14 +1,20 @@
 import styled from 'styled-components';
 import Logo from '../assets/reusable-ui/Logo';
 import Burger from '../assets/reusable-ui/Burger';
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import DropdownMenu from '../context/DropdownMenu';
 import Cross from '../assets/reusable-ui/Cross';
+import { gsap } from 'gsap';
 
 export default function Navbar() {
   const { isOpen, setIsOpen, handleOpen } = useContext(DropdownMenu);
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    gsap.to(navbarRef.current, { transform: 'translate(0)', duration: 1 });
+  }, []);
   return (
-    <NavbarStyled>
+    <NavbarStyled ref={navbarRef}>
       <Logo />
       {isOpen ? (
         <Cross onClick={handleOpen} />
@@ -27,7 +33,8 @@ const NavbarStyled = styled.div`
   position: fixed;
   justify-content: space-between;
   align-items: center;
-
+  transform: translateY(-200%);
+  z-index: 150;
   background: #1d1d1d;
 
   @media screen and (max-width: 1024px) {
