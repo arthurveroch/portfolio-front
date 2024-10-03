@@ -5,7 +5,10 @@ export default function ServiceCard({ service }) {
   return (
     <ServicesCardStyled>
       <div className='img-container'>
-        <img src={service.attributes.servicelogo.data.attributes.url} />
+        <img
+          src={service.attributes.servicelogo.data.attributes.url}
+          alt={service.attributes.title}
+        />
       </div>
       <div className='title-container'>
         <h3>{service.attributes.title}</h3>

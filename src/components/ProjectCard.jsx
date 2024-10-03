@@ -5,7 +5,10 @@ export default function ProjectCard({ project }) {
   return (
     <ProjectCardStyled>
       <div className='img-container'>
-        <img src={project.attributes.thumbnail.data.attributes.url} />
+        <img
+          src={project.attributes.thumbnail.data.attributes.url}
+          alt={project.attributes.title}
+        />
       </div>
       <div className='infos'>
         <h3>{project.attributes.title}</h3>

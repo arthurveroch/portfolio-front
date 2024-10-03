@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default function LogoHero() {
   return (
     <LogoHeroStyled>
-      <img src='./images/logo.png' />
+      <img src='./images/logo.png' alt='logo' />
     </LogoHeroStyled>
   );
 }

@@ -4,7 +4,10 @@ export default function SkillCard({ skill }) {
   return (
     <SkillCardStyled>
       <div className='skill-img'>
-        <img src={skill.attributes.logo.data.attributes.url} />
+        <img
+          src={skill.attributes.logo.data.attributes.url}
+          alt={skill.attributes.techno}
+        />
       </div>
 
       <span>{skill.attributes.techno}</span>
