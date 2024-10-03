@@ -32,7 +32,6 @@ export default function Projects() {
           trigger: projectsRef.current,
           start: 'top 50%',
           end: 'top 30%',
-          markers: true,
         },
       });
     }

@@ -31,7 +31,6 @@ export default function Services() {
           trigger: servicesRef.current,
           start: 'top 50%',
           end: 'top 30%',
-          markers: true,
         },
       });
     }
