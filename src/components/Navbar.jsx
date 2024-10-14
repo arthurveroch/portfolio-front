@@ -3,7 +3,6 @@ import Logo from '../assets/reusable-ui/Logo';
 import Burger from '../assets/reusable-ui/Burger';
 import { useContext, useEffect, useRef } from 'react';
 import DropdownMenu from '../context/DropdownMenu';
-import Cross from '../assets/reusable-ui/Cross';
 import { gsap } from 'gsap';
 
 export default function Navbar() {
@@ -16,11 +15,7 @@ export default function Navbar() {
   return (
     <NavbarStyled ref={navbarRef}>
       <Logo />
-      {isOpen ? (
-        <Cross onClick={handleOpen} />
-      ) : (
-        <Burger onClick={handleOpen} />
-      )}
+      <Burger onClick={handleOpen} />
     </NavbarStyled>
   );
 }

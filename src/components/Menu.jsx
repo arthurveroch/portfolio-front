@@ -6,11 +6,15 @@ import { IoMdMail } from 'react-icons/io';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
+import Cross from '../assets/reusable-ui/Cross';
 
 export default function Menu() {
   const { isOpen, setIsOpen, handleOpen } = useContext(DropdownMenu);
   return (
     <MenuStyled style={isOpen ? { transform: 'translateX(0)' } : {}}>
+      <span className='cross'>
+        <Cross onClick={handleOpen} />
+      </span>
       <MenuItem link={'#accueil'} content={'Accueil'} />
       <MenuItem link={'#about'} content={'A propos'} />
       <MenuItem link={'#services'} content={'Services'} />
@@ -89,5 +93,12 @@ const MenuStyled = styled.div`
   #social {
     display: flex;
     gap: 15px;
+  }
+
+  .cross {
+    position: absolute;
+    z-index: 210;
+    right: 20px;
+    top: 20px;
   }
 `;
