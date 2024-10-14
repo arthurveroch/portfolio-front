@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import MenuItem from './MenuItem';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import DropdownMenu from '../context/DropdownMenu';
 import { IoMdMail } from 'react-icons/io';
 import { BsFillTelephoneFill } from 'react-icons/bs';
@@ -9,6 +9,18 @@ import { FaLinkedin } from 'react-icons/fa';
 import Cross from '../assets/reusable-ui/Cross';
 
 export default function Menu() {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflowY = '';
+    };
+  }, []);
+
   const { isOpen, setIsOpen, handleOpen } = useContext(DropdownMenu);
   return (
     <MenuStyled style={isOpen ? { transform: 'translateX(0)' } : {}}>
